@@ -1,12 +1,15 @@
 import React from 'react';
 import Helmet from 'react-helmet';
 import Post from '../components/Post';
+import Template from '../layouts/index';
 
-export default function Template({ data, pathContext }) {
-  const { markdownRemark: post } = data;
-  const { next, prev } = pathContext;
+export default function PostTemplate(props) {
+  const { markdownRemark: post } = props.data;
+  const { next, prev } = props.pathContext;
   return (
-    <Post post={post} next={next} prev={prev} />
+    <Template {...props}>
+      <Post post={post} next={next} prev={prev} />
+    </Template>
   );
 }
 
