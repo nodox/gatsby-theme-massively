@@ -50,7 +50,7 @@ export default class Template extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    const { pathname } = nextProps.data.location;
+    const { pathname } = nextProps.location;
     this.setState((prevState, props) => {
       return {
         currentPath: pathname
